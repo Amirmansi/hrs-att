@@ -107,7 +107,7 @@ frappe.listview_settings['Attendance'] = {
 	get_multi_select_options: function(employee, month) {
 		return new Promise(resolve => {
 			frappe.call({
-				method: 'erpnext.hr.doctype.attendance.attendance.get_unmarked_days',
+				method: 'hrms.hr.doctype.attendance.attendance.get_unmarked_days',
 				async: false,
 				args: {
 					employee: employee,
