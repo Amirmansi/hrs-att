@@ -9,7 +9,6 @@ frappe.listview_settings['Attendance'] = {
 			return [__(doc.status), "orange", "status,=," + doc.status];
 		}
 	},
-
 	onload: function(list_view) {
 		let me = this;
 		const months = moment.months();
@@ -79,7 +78,7 @@ frappe.listview_settings['Attendance'] = {
 					} else {
 						frappe.confirm(__('Mark attendance as {0} for {1} on selected dates?', [data.status, data.month]), () => {
 							frappe.call({
-								method: "erpnext.hr.doctype.attendance.attendance.mark_bulk_attendance",
+								method: "hrms.hr.doctype.attendance.attendance.mark_bulk_attendance",
 								args: {
 									data: data
 								},
